@@ -5,5 +5,13 @@ Console.WriteLine($"Hello, World! {part}");
 // Version 1
 int d = int.MaxValue;
 int e = 1;
-long f = checked(d + e);
-Console.WriteLine(f);
+
+try
+{
+    long f = checked(d + e);
+    Console.WriteLine(f);
+}
+catch (OverflowException ex)
+{
+    Console.WriteLine("An overflow occurred: " + ex.Message);
+}
